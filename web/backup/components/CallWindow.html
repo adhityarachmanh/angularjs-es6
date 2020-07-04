@@ -1,0 +1,21 @@
+<div id="call-window" class="call-window">
+  <video id="peerVideo" ref="{{peerVvdeo}}" autoplay ></video>
+  <video id="localVideo" ref="{{localvideo}}" autoplay muted ></video>
+  <div class="video-control">
+    <button
+      type="button"
+      class="btn-action fa fa-video-camera {{video?'':'disable'}}"
+      ng-click="togglemediadevice('video')"
+    ></button>
+    <button
+      type="button"
+      class="btn-action fa fa-microphone {{audio?'':'disable'}}"
+      ng-click="togglemediadevice('audio')"
+    ></button>
+    <button
+      type="button"
+      class="btn-action hangup fa fa-phone"
+      ng-click="endcall(true)"
+></button>
+  </div>
+</div>

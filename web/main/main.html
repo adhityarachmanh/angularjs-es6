@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg  bg-transparent fixed-top d-none d-lg-inline-flex">
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+
+  <div class="collapse navbar-collapse">
+    <ul id="nav" class="navbar-nav ml-auto ">
+      <li id="nav-item" class="nav-item px-2" ng-repeat="m in menu">
+        <a class="nav-link text-uppercase" href="{{m.url}}" ng-class="{'active':activeClass(m.url)}">{{m.name}} <span
+            class="sr-only">(current)</span></a>
+
+      </li>
+    </ul>
+
+  </div>
+</nav>
+<div  class="mobile-menu bg-white fixed-bottom border-top d-md-none d-lg-none d-xl-none">
+  <div class="row">
+    <a  href="{{m.url}}" class="mobile-menu--link  mx-auto" ng-class="{'active':activeClass(m.url)}" ng-repeat="m in menu">
+      <div class="mx-auto text-center">
+        <i class="fa {{m.icon}}" ></i>
+      </div>
+
+    </a>
+  </div>
+</div>
+<div ng-view></div>

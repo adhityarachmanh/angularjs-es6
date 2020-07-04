@@ -1,0 +1,32 @@
+<div id="main-window" class="container main-window">
+  <div>
+    <h3>
+      Hi, ID kamu adalah
+      <input type="text" class="txt-clientId" ng-model="clientid" readonly />
+    </h3>
+    <button ng-show="!islogin" ng-click="dologin()" style="color:rgb(107, 78, 78);">Login</button>
+    <h4 ng-show="islogin">Mulailah dengan menelepon teman mu</h4>
+  </div>
+  <div ng-show="islogin">
+    <input
+      type="text"
+      class="txt-clientId"
+      spellcheck="false"
+      ng-model="state.friendID"
+      placeholder="ID teman mu"
+      defaultValue="HIPMI-TESTER-"
+    />
+    <div>
+      <button
+        type="button"
+        class="btn-action fa fa-video-camera"
+        ng-click="callWithVideo(true)"
+      />
+      <button
+        type="button"
+        class="btn-action fa fa-phone"
+        ng-click="callWithVideo(false)"
+      />
+    </div>
+  </div>
+</div>

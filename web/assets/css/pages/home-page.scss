@@ -1,0 +1,32 @@
+.home-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+
+    .title {
+        text-align: center;
+        font-size: 3em;
+
+        &--one {
+            color: lighten($color: $red, $amount: 15%);
+        }
+    }
+
+    #my-img {
+        padding: 5px;
+        border: 2px solid #fff;
+    }
+
+    .home-action {
+        button {
+            font-weight: 600;
+
+            &:hover {
+                background-color: lighten($color: $red, $amount: 15%);
+                transition: ease-in-out 0.5s;
+            }
+        }
+    }
+
+    
+}
