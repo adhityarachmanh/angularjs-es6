@@ -1,0 +1,17 @@
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "variables";
+@import "shared/base";
+
+
+body {
+    background: $primary-color;
+}
+
+@import "pages/home-page.scss";
+// @import "main-window";
+// @import "call-window";
+// @import "call-modal";

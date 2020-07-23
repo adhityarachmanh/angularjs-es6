@@ -1,5 +1,4 @@
 import { BuildPage } from "../module-builder";
-import $ from "jquery";
 
 export default BuildPage(
   {
@@ -7,22 +6,16 @@ export default BuildPage(
     path: "pages/home",
     controller: "HomeController",
   },
-  [
-    "$scope","$rootScope",
-    function ($scope,$rootScope) {
-      
-      $scope.state = {
-        title: "home",
-      };
+  ($scope, SkillService) => {
+    $scope.state = {
+      skill: [],
+    };
 
-      $scope.openModal = function () {
-        $("#test-modal").modal("toggle");
-        // angular.element("#test-modal").modal("show")
-      };
-      $scope.componentDidMount = function () {
-        $rootScope.setTemplate(1);
-      };
-      $scope.componentDidMount();
-    },
-  ]
+    async function getAllData() {
+      const data = await SkillService.getAllData();
+      $scope.state.skill = data;
+      $scope.$apply();
+    }
+    getAllData();
+  }
 );

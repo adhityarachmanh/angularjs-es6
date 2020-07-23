@@ -56,7 +56,7 @@ const configs = addBaseConfig({
   ],
   devServer: {
     compress: true,
-    port: 7000,
+    port: 8000,
     host:"localhost",
     historyApiFallback: true,
     // proxy: {

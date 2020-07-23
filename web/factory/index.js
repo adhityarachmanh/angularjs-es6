@@ -1,6 +1,6 @@
-import global from "./global";
-import rest from "./rest";
+import GLOBAL from "./globalFactory";
+import API from "./apiFactory";
 
-const FACTORY = [global, rest];
+const FACTORY = [GLOBAL, API];
 
 export default FACTORY;

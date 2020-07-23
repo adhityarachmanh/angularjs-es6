@@ -14,9 +14,18 @@ const sharedConfigs = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
-            // plugins: [["angularjs-annotate", { explicitOnly: true }]],
-            plugins: ["angularjs-annotate"],
-
+           
+            plugins: [
+              // angular JS ES 6 
+              "angularjs-annotate",
+              [
+                // untuk async dan await
+                "@babel/transform-runtime",
+                {
+                  regenerator: true,
+                },
+              ],
+            ],
           },
         },
       },

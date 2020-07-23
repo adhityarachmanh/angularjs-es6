@@ -1,5 +1,11 @@
 import CONFIG from "./config";
 
+const BuildService = (name, service, MODULES = []) => {
+  return angular
+    .module(CONFIG.MODULE_NAME + ".service." + name, MODULES)
+    .service(name, service).name;
+};
+
 const BuildFactory = (name, factory, MODULES = []) => {
   return angular
     .module(CONFIG.MODULE_NAME + ".factory." + name, MODULES)
@@ -31,6 +37,7 @@ const BuildPage = (config, ctrl, MODULES = []) => {
     .config([
       "$locationProvider",
       "$routeProvider",
+
       function ($locationProvider, $routeProvider) {
         //daftarkan home route
         $routeProvider
@@ -48,4 +55,4 @@ const BuildPage = (config, ctrl, MODULES = []) => {
     .controller(cName, ctrl).name;
 };
 
-export { BuildPage, BuildComponent, BuildFactory };
+export { BuildPage, BuildComponent, BuildFactory, BuildService };

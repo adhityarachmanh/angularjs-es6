@@ -1,21 +1,21 @@
 import angular from "angular";
 import "angular-route";
 import "bootstrap";
-import "./assets/css/app.scss";
+import "./assets/sass/app.scss";
 import PAGES from "./pages";
 import COMPONENTS from "./components";
 import FACTORY from "./factory";
-import TEMPLATE from "./main";
 import CONFIG from "./config";
+import SERVICES from "./services";
 
 //merge semua module
 let MODULES = ["ngRoute"];
 MODULES = MODULES.concat(PAGES);
 MODULES = MODULES.concat(COMPONENTS);
 MODULES = MODULES.concat(FACTORY);
-MODULES = MODULES.concat(TEMPLATE);
+MODULES = MODULES.concat(SERVICES);
 
-console.log(MODULES);
+console.log("LIST MODULE : ",MODULES);
 
 angular
   .module(CONFIG.MODULE_NAME, MODULES)
@@ -26,14 +26,10 @@ angular
       controllerAs: "app",
     };
   })
-  .controller("AppController", [
-    "$scope",
-    "$rootScope",
-    "$route",
-    function ($scope, $rootScope, $route) {
-      $scope.template = 1;
-      $rootScope.setTemplate = function (index) {
-        $scope.template = index;
-      };
-    },
-  ]).name;
+  .controller("AppController", ($scope, $rootScope) => {
+    $scope.template = 1;
+    $rootScope.setTemplate = function (index) {
+      $scope.template = index;
+      $scope.$apply();
+    };
+  }).name;

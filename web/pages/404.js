@@ -10,7 +10,7 @@ export default BuildPage(
     "$scope",
     "$rootScope",
     function ($scope, $rootScope) {
-      $rootScope.setTemplate(2);
+      $rootScope.setTemplate(3);
       $scope.state = {
         title: "404",
       };
