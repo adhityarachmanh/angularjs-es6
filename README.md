@@ -1,4 +1,4 @@
-# AngularJS ES6 + SCSS + WEBPACK + DJANGO
+# AngularJS ES6 + DJANGO + SCSS + WEBPACK
 
 Framewrok website
 
