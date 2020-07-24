@@ -1,7 +1,0 @@
-### SIGNIN ###
-POST http://localhost:25000/v1.0/api/signin/ HTTP/1.1
-Content-Type:  application/json
-
-{
-    
-}

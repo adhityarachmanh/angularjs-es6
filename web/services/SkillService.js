@@ -8,8 +8,8 @@ export default BuildService("SkillService", (API) => {
       );
     },
     getAllData: async () => {
-      return await API.externalGET(
-        "https://jsonplaceholder.typicode.com/posts"
+      return await API.post(
+        "skill"
       );
     },
   };

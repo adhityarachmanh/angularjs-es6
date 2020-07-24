@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const addBaseConfig = require("./webpack-base.config");
-const CONFIG = require("./arh");
+const CONFIG = require("./webpack-config");
+
 
 const configs = addBaseConfig({
   mode: "production",

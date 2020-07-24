@@ -1,26 +1,36 @@
 import { BuildFactory } from "../module-builder";
 import CONFIG from "../config";
 
-export default BuildFactory("API", () => {
+export default BuildFactory("API", (GLOBAL) => {
   let _CT = "Content-Type",
     _APPJSON = "application/json",
+    API_VERSION = "v1.0",
+    API_ROOT = "api",
     SERVICEBASE = CONFIG.SERVICEBASE,
-    SET_HEADERS = function (HEADERS) {
+    SET_HEADERS = (HEADERS) => {
       return new Headers({
         [_CT]: _APPJSON,
         ...HEADERS,
       });
+    },
+    API_ROUTE = (URL) => {
+      let noEncURL = `${API_VERSION}/${API_ROOT}/${URL}`;
+      if (CONFIG.MODE === "production") {
+        return SERVICEBASE + "/" + GLOBAL.enc(noEncURL, 1, 6);
+      }
+      return `${SERVICEBASE}/${noEncURL}`;
     };
+  console.log(API_ROUTE);
   return {
     post: async function (URL, DATA, HEADERS = {}) {
-      return await fetch(SERVICEBASE + "/" + URL, {
+      return await fetch(API_ROUTE(URL), {
         method: "POST",
         body: JSON.stringify(DATA),
         headers: SET_HEADERS(HEADERS),
       }).then((response) => response.json());
     },
     get: async function (URL, HEADERS = {}) {
-      return await fetch(SERVICEBASE + "/" + URL, {
+      return await fetch(API_ROUTE(URL), {
         method: "GET",
         headers: SET_HEADERS(HEADERS),
       }).then((response) => response.json());

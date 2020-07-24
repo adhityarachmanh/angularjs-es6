@@ -1,12 +1,11 @@
 const { HotModuleReplacementPlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CONFIG = require("./arh");
+const CONFIG = require("./webpack-config");
 const addBaseConfig = require("./webpack-base.config");
-
 
 const configs = addBaseConfig({
   mode: "development",
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   output: {
     filename: `js/${CONFIG.CREATOR}.[hash].js`,
   },
@@ -15,17 +14,20 @@ const configs = addBaseConfig({
       {
         //scsss
         test: /\.scss$/,
-        use: ["style-loader", "css-loader",{
-          loader: 'postcss-loader', // Run post css actions
-          options: {
-            plugins: function () { // post css plugins, can be exported to postcss.config.js
-              return [
-                require('precss'),
-                require('autoprefixer')
-              ];
-            }
-          }
-        }, "sass-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader", // Run post css actions
+            options: {
+              plugins: function () {
+                // post css plugins, can be exported to postcss.config.js
+                return [require("precss"), require("autoprefixer")];
+              },
+            },
+          },
+          "sass-loader",
+        ],
       },
       {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
@@ -49,18 +51,23 @@ const configs = addBaseConfig({
   plugins: [
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: CONFIG.TITLE+` (${CONFIG.CREATOR})`,
+      title: CONFIG.TITLE + ` (${CONFIG.CREATOR})`,
       filename: "index.html",
-      template: "web/index.html"
+      template: "web/index.html",
     }),
   ],
   devServer: {
     compress: true,
-    port: 8000,
-    host:"localhost",
-    historyApiFallback: true,
+    port: CONFIG.PORT,
+    host: CONFIG.HOST,
+    // historyApiFallback: true,
+    // headers: {
+    //   "Access-Control-Allow-Origin": "*",
+    //   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+    //   "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
+    // },
     // proxy: {
-    //   "/": `http://localhost:${CONFIG.PORT}`,
+    //   "/": `http://${CONFIG.HOST}:${CONFIG.PORT}`,
     // },
     watchOptions: {
       aggregateTimeout: 300,
