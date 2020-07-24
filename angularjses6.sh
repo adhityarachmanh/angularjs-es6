@@ -1,11 +1,11 @@
 #!/bin/bash
 ### BEGIN INIT INFO
-# Provides: arhangularjs 
+# Provides: freshfish 
 # Required-Start:    $local_fs $remote_fs $network $syslog $named
 # Required-Stop:     $local_fs $remote_fs $network $syslog $named
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Description:       arhangularjs svc ver 1.0 che 20200103
+# Description:       freshfish svc ver 1.0 che 20200103
 ### END INIT INFO
 
 CBLUE="\x1b[34;01m"
@@ -38,13 +38,13 @@ $CRESET"
   exit 1
 }
 
-SVCNAME="arhangularjs"
-USER=adhitya
-GROUP=rachman
-ROOTDIR=/home/adhitya/projects/arh-angularjs/api
-DAEMON=$ROOTDIR/env/bin/gunicorn
-APPDIR=$ROOTDIR
-SOCKFILE=$APPDIR/run/api/arhangularjs.sock
+SVCNAME="angularjses6"
+USER=arh
+GROUP=arh
+ROOTDIR=/home/arh/projects/angularjs-es6
+DAEMON=$ROOTDIR/server/env/bin/gunicorn
+APPDIR=$ROOTDIR/server
+SOCKFILE=$APPDIR/run/api/angularjses6.sock
 PIDFILE=$APPDIR/run/api/gunicorn.pid
 LOGFILE=$APPDIR/run/log/gunicorn.log
 # Gunicorn
@@ -95,7 +95,7 @@ start(){
   local PRE_EXEC="source $ROOTDIR/env/bin/activate;cd $APPDIR;"
   # Start Bottle Gunicorn
   # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
-  local ARG="${APP_MAIN}:app --daemon --name $SVCNAME --worker-class gthread --workers $NUM_WORKERS --threads $NUM_WORKERS --max-requests-jitter 10000 --bind=unix:$SOCKFILE --backlog 5120 --pid=$PIDFILE --timeout 120 --reload --log-level=error --log-file=$LOGFILE &!"
+  local ARG="app.wsgi --daemon --name $SVCNAME --worker-class gthread --workers $NUM_WORKERS --threads $NUM_WORKERS --max-requests-jitter 10000 --bind=unix:$SOCKFILE --backlog 5120 --pid=$PIDFILE --timeout 120 --reload --log-level=error --log-file=$LOGFILE &!"
   local CMD="$PRE_EXEC $DAEMON $ARG;"
   su -s /bin/bash -c "$CMD"
   echo "Starting $SVCNAME completed."

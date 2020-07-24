@@ -30,8 +30,9 @@ const BuildComponent = (config, ctrl, MODULES = []) => {
 
 const BuildPage = (config, ctrl, MODULES = []) => {
   const { url, path: dir, controller: cName } = config;
-  var name = dir.split("/");
-  name = name[name.length - 1];
+  let name = dir.split("/");
+  name = name;
+ 
   return angular
     .module(CONFIG.MODULE_NAME + ".page." + name, MODULES)
     .config([

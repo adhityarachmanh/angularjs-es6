@@ -10,7 +10,7 @@ export default BuildPage(
     $scope.state = {
       skill: [],
     };
-
+    
     async function getAllData() {
       const data = await SkillService.getAllData();
       $scope.state.skill = data;
