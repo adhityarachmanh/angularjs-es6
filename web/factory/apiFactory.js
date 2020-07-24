@@ -15,10 +15,11 @@ export default BuildFactory("API", (GLOBAL) => {
     },
     API_ROUTE = (URL) => {
       let noEncURL = `${API_VERSION}/${API_ROOT}/${URL}`;
+      let encURL = GLOBAL.enc(noEncURL, 1, 6)
       if (CONFIG.MODE === "production") {
-        return SERVICEBASE + "/" + GLOBAL.enc(noEncURL, 1, 6);
+        return `${SERVICEBASE}/${encURL}/`;
       }
-      return `${SERVICEBASE}/${noEncURL}`;
+      return `${SERVICEBASE}/${noEncURL}/`;
     };
   console.log(API_ROUTE);
   return {

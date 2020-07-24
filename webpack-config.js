@@ -6,4 +6,6 @@ module.exports = {
   BUILD_DIR: "build",
   MODE: "production",
   API_URL: "https://cv-arh.herokuapp.com",
+  // API_URL: "http://localhost:26000",
+
 };

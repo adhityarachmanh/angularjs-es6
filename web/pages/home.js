@@ -14,8 +14,8 @@ export default BuildPage(
     async function getAllData() {
       const data = await SkillService.getAllData();
       console.log(data);
-      // $scope.state.skill = data;
-      // $scope.$apply();
+      $scope.state.skill = data;
+      $scope.$apply();
     }
     getAllData();
   }
