@@ -18,10 +18,10 @@ load_dotenv()
 """
 Costume Config ARH
 """
-if os.getenv('IS_PRODUCTION',None):
-    PRODUCTION =True
+if os.getenv('IS_PRODUCTION', None):
+    PRODUCTION = True
     DEBUG = False
-elif os.getenv('IS_DEVELOPMENT',None):
+elif os.getenv('IS_DEVELOPMENT', None):
     PRODUCTION = False
     DEBUG = True
 
@@ -34,15 +34,15 @@ SECRET = getEncConf("SECRET")
 ROOT_API = "api"
 VERSION = "v1.0"
 
-EMAIL_HOST =  'smtp.gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = getEncConf("SMTP_USERNAME")
-EMAIL_HOST_PASSWORD =getEncConf("SMTP_PASSWORD")
+EMAIL_HOST_PASSWORD = getEncConf("SMTP_PASSWORD")
 EMAIL_USE_TLS = True
 
 
 TWILIO_ID = ""
-TWILIO_TOKEN=""
+TWILIO_TOKEN = ""
 TWILIO_PROVIDER_NUMBER = 14155238886
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -57,7 +57,7 @@ SECRET_KEY = getEncConf("SECRET")
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = [HOST_DEPLOY,"localhost"]
+ALLOWED_HOSTS = [HOST_DEPLOY, "localhost"]
 
 
 # Application definition
@@ -89,7 +89,7 @@ ROOT_URLCONF = 'app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,16 +105,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'app.wsgi.application'
 
 
-
-
-DATABASES={
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':'d64nnaq88o5a2v',
-        'USER':'ibsteoqbuxunpj',
-        'PASSWORD':'4cb8949eebb18cb2ce5405230144015ae09b7ae35a6251ec87ea911778ca6f57',
-        'HOST':'ec2-35-172-73-125.compute-1.amazonaws.com',
-        'PORT':5432
+        'ENGINE': 'djongo',
+        'NAME': 'cv'
     }
 }
 
@@ -155,5 +149,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
