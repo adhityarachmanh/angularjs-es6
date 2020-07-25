@@ -5,7 +5,6 @@ const TerserPlugin = require("terser-webpack-plugin");
 const addBaseConfig = require("./webpack-base.config");
 const CONFIG = require("./webpack-config");
 
-
 const configs = addBaseConfig({
   mode: "production",
   // devtool: "source-map",
@@ -34,6 +33,19 @@ const configs = addBaseConfig({
         ],
       },
       {
+        test: /\.(png|gif|jpg|jpeg)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: CONFIG.CREATOR + ".[hash:6].[ext]",
+              publicPath: "./",
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|woff|woff2|eot|ttf|svg)$/,
         use: [
           {
@@ -57,7 +69,9 @@ const configs = addBaseConfig({
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: CONFIG.CREATOR + ".[hash].min.css" }),
+    new MiniCssExtractPlugin({
+      filename: CONFIG.CREATOR + ".[hash:6].min.css",
+    }),
     new HtmlWebpackPlugin({
       title: CONFIG.TITLE + ` (${CONFIG.CREATOR})`,
       filename: path.join(__dirname, CONFIG.BUILD_DIR + "/index.html"),

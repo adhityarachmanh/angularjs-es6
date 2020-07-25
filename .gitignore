@@ -65,6 +65,4 @@ node_modules/
 .env
 
 
-res/env
-res/run
 build

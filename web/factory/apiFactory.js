@@ -1,7 +1,7 @@
 import { BuildFactory } from "../module-builder";
 import CONFIG from "../config";
 
-export default BuildFactory("API", (GLOBAL) => {
+export default BuildFactory("API", ["GLOBAL",function (GLOBAL) {
   let _CT = "Content-Type",
     _APPJSON = "application/json",
     API_VERSION = "v1.0",
@@ -24,7 +24,7 @@ export default BuildFactory("API", (GLOBAL) => {
   console.log(API_ROUTE);
   return {
     post: async function (URL, DATA, HEADERS = {}) {
-      return await fetch(API_ROUTE(URL), {
+      return  fetch(API_ROUTE(URL), {
         method: "POST",
         body: JSON.stringify(DATA),
         headers: SET_HEADERS(HEADERS),
@@ -50,4 +50,4 @@ export default BuildFactory("API", (GLOBAL) => {
       }).then((response) => response.json());
     },
   };
-});
+}]);

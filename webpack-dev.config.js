@@ -1,5 +1,6 @@
 const { HotModuleReplacementPlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const CONFIG = require("./webpack-config");
 const addBaseConfig = require("./webpack-base.config");
 
@@ -49,6 +50,24 @@ const configs = addBaseConfig({
     ],
   },
   plugins: [
+    // new BrowserSyncPlugin({
+    //   port: CONFIG.PORT,
+    //   host: CONFIG.HOST,
+    //   files: ["web/*"],
+    //   server: { baseDir: ['build'] },
+    //   ghostMode: {
+    //     clicks: false,
+    //     location: false,
+    //     forms: false,
+    //     scroll: false,
+    //   },
+    //   injectChanges: true,
+    //   logFileChanges: true,
+    //   logLevel: "debug",
+    //   logPrefix: "wepback",
+    //   notify: true,
+    //   reloadDelay: 0,
+    // }),
     new HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: CONFIG.TITLE + ` (${CONFIG.CREATOR})`,
@@ -60,7 +79,7 @@ const configs = addBaseConfig({
     compress: true,
     port: CONFIG.PORT,
     host: CONFIG.HOST,
-    // historyApiFallback: true,
+    historyApiFallback: true,
     // headers: {
     //   "Access-Control-Allow-Origin": "*",
     //   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",

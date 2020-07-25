@@ -2,9 +2,7 @@ const _ = require("lodash");
 
 const sharedConfigs = {
   context: __dirname,
-  entry: {
-    app: "./web/index.js",
-  },
+  entry: ["@babel/polyfill", "./web/index.js"],
   module: {
     rules: [
       {
@@ -14,17 +12,10 @@ const sharedConfigs = {
           loader: "babel-loader",
           options: {
             presets: ["@babel/preset-env"],
-           
+
             plugins: [
-              // angular JS ES 6 
+              // angular JS ES 6
               "angularjs-annotate",
-              [
-                // untuk async dan await
-                "@babel/transform-runtime",
-                {
-                  regenerator: true,
-                },
-              ],
             ],
           },
         },

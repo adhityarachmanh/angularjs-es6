@@ -6,7 +6,7 @@ export default BuildPage(
     path: "pages/home",
     controller: "HomeController",
   },
-  ($scope, SkillService) => {
+  ["$scope","SkillService",function ($scope,SkillService) {
     $scope.state = {
       skill: [],
     };
@@ -18,5 +18,5 @@ export default BuildPage(
       $scope.$apply();
     }
     getAllData();
-  }
+  }]
 );
