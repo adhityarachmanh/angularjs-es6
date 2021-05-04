@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-strict-di ng-controller="IndexController"  >
+
+<head>
+  <meta charset="utf-8">
+  <!-- <base href="/" /> -->
+</head>
+
+<body>
+  <template-one   ng-if="$route.current.type === 1"></template-one>
+  <template-two   ng-if="$route.current.type === 2"></template-two>
+  <template-three ng-if="$route.current.type === 3"></template-three>  
+</body>
+
+</html>

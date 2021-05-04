@@ -1,4 +1,4 @@
-import { BuildFactory } from "../module-builder";
+import { BuildFactory } from "./module-builder";
 
 function $global() {
   var _asciiBitAmt = 8,

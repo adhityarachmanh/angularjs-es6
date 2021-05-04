@@ -1,4 +1,4 @@
-import { BuildFactory } from "../module-builder";
+import { BuildFactory } from "./module-builder";
 import CONFIG from "../config";
 
 export default BuildFactory("API", ["GLOBAL",function (GLOBAL) {

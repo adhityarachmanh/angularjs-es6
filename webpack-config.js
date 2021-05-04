@@ -1,11 +1,11 @@
 module.exports = {
-  PORT: 8000,
+  PORT: 4000,
   HOST: "localhost",
   CREATOR: "arh",
-  TITLE: "CV - Adhitya Rachman H",
+  TITLE: "Angular JS ES6 - Adhitya Rachman H",
   BUILD_DIR: "build",
   MODE: "production",
-  API_URL: "https://cv-arh.herokuapp.com",
+  API_URL: "",
   // API_URL: "http://localhost:26000",
 
 };

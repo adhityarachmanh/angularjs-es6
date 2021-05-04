@@ -3,15 +3,15 @@ $fa-font-path: "~font-awesome/fonts";
 
 @import "~bootstrap/scss/bootstrap";
 
-@import "variables";
-@import "shared/base";
+@import "./variables.scss";
 
 
 body {
     background: $primary-color;
+    color: $main-color;
 }
 
-@import "pages/home-page.scss";
+
 // @import "main-window";
 // @import "call-window";
 // @import "call-modal";

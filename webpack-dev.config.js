@@ -72,7 +72,7 @@ const configs = addBaseConfig({
     new HtmlWebpackPlugin({
       title: CONFIG.TITLE + ` (${CONFIG.CREATOR})`,
       filename: "index.html",
-      template: "web/index.html",
+      template: "app/index.html",
     }),
   ],
   devServer: {
