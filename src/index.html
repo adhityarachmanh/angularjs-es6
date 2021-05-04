@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" ng-strict-di ng-controller="IndexController"  >
+<html lang="en" ng-app="app" ng-strict-di ng-controller="IndexController">
 
 <head>
   <meta charset="utf-8">
@@ -7,9 +7,9 @@
 </head>
 
 <body>
-  <template-one   ng-if="$route.current.type === 1"></template-one>
-  <template-two   ng-if="$route.current.type === 2"></template-two>
-  <template-three ng-if="$route.current.type === 3"></template-three>  
+  <template-1 ng-if="$route.current.type === 1"></template-1>
+  <template-2 ng-if="$route.current.type === 2"></template-2>
+  <template-3 ng-if="$route.current.type === 3"></template-3>
 </body>
 
 </html>

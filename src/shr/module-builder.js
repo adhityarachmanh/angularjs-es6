@@ -1,3 +1,8 @@
+/*
+mod : Module Builder
+cre : arh 
+ver : 0
+*/
 import CONFIG from "../../webpack-config";
 const BuildService = (name, service, MODULES = []) => {
   return angular

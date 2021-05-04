@@ -21,10 +21,10 @@ const sharedConfigs = {
           },
         },
       },
-      {
-        test: require.resolve("webrtc-adapter"),
-        use: "expose-loader",
-      },
+      // {
+      //   test: require.resolve("webrtc-adapter"),
+      //   use: "expose-loader",
+      // },
     ],
   },
 };

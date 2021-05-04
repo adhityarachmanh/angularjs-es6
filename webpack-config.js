@@ -5,7 +5,7 @@ module.exports = {
     HOST: "localhost",
   },
   MODULE_NAME: "app",
-  BUILD_DIR: "build",
+  BUILD_DIR: "dist",
   BASE_DIR: "src",
   CREATOR: "arh",
   API_URL: "https://hipminet.ipm.id/res/",

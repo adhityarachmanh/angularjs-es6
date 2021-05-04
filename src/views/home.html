@@ -1,3 +1,11 @@
  <div >
+ CURRENT DATE : {{currentDate   }}
+ <br>
  HOME PAGE
+ <a href="/signin">SIGNIN PAGE</a>
+ <ul>
+     <li ng-repeat="d in data">
+         <a href="/post/{{d.id}}">{{d.title}}</a>
+     </li>
+ </ul>
  </div>

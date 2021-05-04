@@ -3,27 +3,27 @@ import { BuildTemplate } from "../shr/module-builder";
 const TEMPLATES = [
   BuildTemplate(
     {
-      name: "templateOne",
+      name: "template1",
       scope: {},
-      path: "templates/template-one.html",
+      path: "templates/template-1.html",
       controller: "TemplateOneController",
     },
     [function () {}]
   ),
   BuildTemplate(
     {
-      name: "templateTwo",
+      name: "template2",
       scope: {},
-      path: "templates/template-two.html",
+      path: "templates/template-2.html",
       controller: "",
     },
     [function () {}]
   ),
   BuildTemplate(
     {
-      name: "templateThree",
+      name: "template3",
       scope: {},
-      path: "templates/template-three.html",
+      path: "templates/template-3.html",
       controller: "",
     },
     [function () {}]
