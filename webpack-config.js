@@ -1,11 +1,12 @@
 module.exports = {
-  PORT: 4000,
-  HOST: "localhost",
-  CREATOR: "arh",
   TITLE: "Angular JS ES6 - Adhitya Rachman H",
+  WEB_SERVER: {
+    PORT: 4000,
+    HOST: "localhost",
+  },
+  MODULE_NAME: "app",
   BUILD_DIR: "build",
-  MODE: "production",
-  API_URL: "",
-  // API_URL: "http://localhost:26000",
-
+  BASE_DIR: "src",
+  CREATOR: "arh",
+  API_URL: "https://hipminet.ipm.id/res/",
 };

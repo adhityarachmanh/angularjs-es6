@@ -1,13 +1,13 @@
 import $routeFunction from "./shr/routeFunction"
-import HomeComponent from "./pages/home"
-import S404Component from "./pages/404"
+import HomeComponent from "./views/home"
+import S404Component from "./views/404"
 
 
 export default $routeFunction([
     {
         url: "/",
         template: {
-            path: "pages/home.html",
+            path: "views/home.html",
             type: 1
         },
         controller: {
@@ -18,7 +18,7 @@ export default $routeFunction([
     {
         url: "/404",
         template: {
-            path: "pages/404.html",
+            path: "views/404.html",
             type: 3
         },
         controller: {

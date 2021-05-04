@@ -1,6 +1,6 @@
 const { HotModuleReplacementPlugin } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const CONFIG = require("./webpack-config");
 const addBaseConfig = require("./webpack-base.config");
 
@@ -72,13 +72,13 @@ const configs = addBaseConfig({
     new HtmlWebpackPlugin({
       title: CONFIG.TITLE + ` (${CONFIG.CREATOR})`,
       filename: "index.html",
-      template: "app/index.html",
+      template: `${CONFIG.BASE_DIR}/index.html`,
     }),
   ],
   devServer: {
     compress: true,
-    port: CONFIG.PORT,
-    host: CONFIG.HOST,
+    port: CONFIG.WEB_SERVER.PORT,
+    host: CONFIG.WEB_SERVER.HOST,
     historyApiFallback: true,
     // headers: {
     //   "Access-Control-Allow-Origin": "*",

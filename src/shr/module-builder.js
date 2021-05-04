@@ -1,5 +1,4 @@
-import CONFIG from "../config";
-
+import CONFIG from "../../webpack-config";
 const BuildService = (name, service, MODULES = []) => {
   return angular
     .module(CONFIG.MODULE_NAME + ".service." + name, MODULES)

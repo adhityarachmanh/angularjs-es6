@@ -8,7 +8,7 @@ const TEMPLATES = [
       path: "templates/template-one.html",
       controller: "TemplateOneController",
     },
-    () => { }
+    [function () {}]
   ),
   BuildTemplate(
     {
@@ -17,7 +17,7 @@ const TEMPLATES = [
       path: "templates/template-two.html",
       controller: "",
     },
-    []
+    [function () {}]
   ),
   BuildTemplate(
     {
@@ -26,7 +26,7 @@ const TEMPLATES = [
       path: "templates/template-three.html",
       controller: "",
     },
-    []
+    [function () {}]
   ),
 ];
 

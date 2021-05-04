@@ -1,8 +1,9 @@
 const _ = require("lodash");
+const CONFIG = require("./webpack-config");
 
 const sharedConfigs = {
   context: __dirname,
-  entry: ["@babel/polyfill", "./app/app.js"],
+  entry: ["@babel/polyfill", `./${CONFIG.BASE_DIR}/app.js`],
   module: {
     rules: [
       {

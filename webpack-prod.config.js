@@ -75,7 +75,7 @@ const configs = addBaseConfig({
     new HtmlWebpackPlugin({
       title: CONFIG.TITLE + ` (${CONFIG.CREATOR})`,
       filename: path.join(__dirname, CONFIG.BUILD_DIR + "/index.min.html"),
-      template: "app/index.html",
+      template: `${CONFIG.BASE_DIR}/index.html`,
       inject: "body",
     }),
   ],
