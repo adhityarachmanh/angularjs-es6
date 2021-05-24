@@ -19,7 +19,7 @@ module.exports = (env, argv) => {
     // devtool: "source-map",
     output: {
       path: path.resolve(__dirname, CONFIG.BUILD_DIR),
-      filename: context + ".[name].min.js",
+      filename: "assets/js/"+context + ".[name].min.js",
     },
     module: {
       rules: [{
@@ -54,7 +54,7 @@ module.exports = (env, argv) => {
           use: [{
               loader: "url-loader",
               options: {
-                name: context + ".[hash:6].[ext]",
+                name: context + ".[hash].[ext]",
                 outputPath: "assets/images",
                 publicPath: "./assets/images",
                 limit: 10000,
@@ -71,7 +71,7 @@ module.exports = (env, argv) => {
           use: [{
             loader: "file-loader",
             options: {
-              name: context + ".[name].[ext]",
+              name: context + ".[hash].[ext]",
               outputPath: "assets/fonts",
               publicPath: "./assets/fonts",
             },
@@ -89,7 +89,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: context + ".min.css",
+        filename: "assets/css/"+ context + ".min.css",
       }),
       new HtmlWebpackPlugin({
         minify: true,

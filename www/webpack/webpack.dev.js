@@ -45,12 +45,28 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|jpe?g|gif|svg|woff|woff2|eot|ttf)$/,
+          test: /\.(jpe?g|png|gif|svg)$/i,
+          use: [{
+              loader: "url-loader",
+              options: {
+                name: context + ".[hash].[ext]",
+                outputPath: "assets/images",
+                limit: 10000,
+              },
+            },
+            {
+              loader: "img-loader",
+              options: {},
+            },
+          ],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf)$/,
           use: [{
             loader: "file-loader",
             options: {
-              name: `${context}.[hash].[ext]`,
-              outputPath: "assets",
+              name: context + ".[hash].[ext]",
+              outputPath: "assets/fonts",
             },
           }, ],
         },
