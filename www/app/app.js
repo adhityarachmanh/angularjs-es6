@@ -11,7 +11,9 @@ import IndexComponent from "./index";
 import routes from "./routes";
 import Global from "../shr/global";
 import SvcRestAPI from "../shr/api";
-import Config from "./config";
+import Config, {
+    config
+} from "./config";
 import {
     NgModule
 } from "../shr/module-builder";
@@ -23,7 +25,7 @@ import {
 import homeComponent from "./views/home/home.component";
 import testComponent from "./views/test/test.component";
 
-NgModule("app",{
+NgModule(config.name, {
     components: [
         homeComponent,
         testComponent

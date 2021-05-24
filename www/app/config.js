@@ -2,9 +2,10 @@ import {
   Constant
 } from "../shr/module-builder";
 
-export default Constant("C", {
+export const config = {
   _R: "",
   v: "?v=1",
+  name: "app",
   app: 'app/',
   res: 'res/',
   lOpt: [{
@@ -24,4 +25,5 @@ export default Constant("C", {
     Copyright: "",
     Version: ""
   }
-});
+};
+export default Constant("C", config);

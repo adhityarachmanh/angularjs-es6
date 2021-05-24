@@ -12,6 +12,7 @@ export default Component({
   ($scope, $rootScope, res, G,Config) => {
     $scope.title = Config.Copyright.Product;
     $scope.creator = Config.Copyright.Creator;
+    $scope.appname = Config.name;
   },
 
 ]);
