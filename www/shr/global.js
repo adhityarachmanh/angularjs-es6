@@ -1,4 +1,4 @@
-import { BuildFactory } from "./module-builder";
+import { Factory } from "./module-builder";
 
 const $global = () => {
   function getLength(obj) {
@@ -978,4 +978,4 @@ const $global = () => {
       } */
   };
 };
-export default BuildFactory("G", $global);
+export default Factory("G", $global);

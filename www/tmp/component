@@ -1,0 +1,8 @@
+export default BuildComponent({
+  name: "ExampleComponent",
+  template: require("./example.component.html"),
+}, [
+  "$scope",($scope) => {
+      $scope.controller = "Controller ExampleComponent";
+  },]
+);

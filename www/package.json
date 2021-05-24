@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "app.ng":"bash ../scripts/angularjs.sh app",
     "app.prod": "webpack --config webpack/webpack.prod.js --project=app",
     "app.dev": "webpack-dev-server --host=localhost --port=4000 --config  webpack/webpack.dev.js --project=app"
   },

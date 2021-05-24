@@ -82,7 +82,9 @@ module.exports = (env, argv) => {
       // }),
       new HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
-        title: CONFIG.TITLE + ` (${context})`,
+        base: {
+          href: '/',
+        },
         filename: "index.html",
         template: `../${context}/index.html`,
       }),

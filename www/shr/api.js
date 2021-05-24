@@ -1,7 +1,7 @@
-import { BuildFactory } from "./module-builder";
+import { Factory } from "./module-builder";
 // import CONFIG from "../app-config";
 
-export default BuildFactory("A", [
+export default Factory("A", [
   "C",
   "G",
   "$http",

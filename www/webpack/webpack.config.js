@@ -1,5 +1,4 @@
 module.exports = {
-  TITLE: "Angular JS ES6",
+  FILE_MODULE: "app.js",
   BUILD_DIR: "../build",
-  CREATOR: "Adhitya Rachman Hidayatullah "
 };

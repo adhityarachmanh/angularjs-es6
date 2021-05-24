@@ -1,42 +1,24 @@
-function $routeFunction(routes, config) {
-  var keyMap = {
-    c: 'controller',
-    t: 'template',
-    u: 'templateUrl',
-    s: '_controller',
-    r: 'resolve',
-    p: 'type'
-  };
-  const _routes = [];
-  var i = 0;
-  angular.forEach(routes, (objRoute) => {
-    var obj = {};
-    angular.forEach(objRoute[1], (value, key) => {
-      if (keyMap[key]) {
-        if (key == 'u') {
-          value = config.app + value + config.v;
-        } 
-        key = keyMap[key];
-      }
-      obj[key] = value;
-    })
+const $routeFunction = (routes) => {
+  return angular.module('routing', []).config([
+    "$routeProvider", "$locationProvider", "C", ($routeProvider, $locationProvider, CONFIG) => {
+      angular.forEach(routes, (objRoute) => {
+        var obj = {};
+        angular.forEach(objRoute[1], (value, key) => {
+          if (key == 'component') {
+            obj.template = value.template;
+            obj.controller = value.component;
+          } else if (key == 'template') {
+            obj.type = value;
+          } else {
+            obj[key] = value;
+          }
+        })
+        $routeProvider.when(objRoute[0], obj);
+      })
+      $routeProvider.otherwise("/404");
+      $locationProvider.html5Mode(true);
+    }
+  ]).name
 
-    var name = "route_" + i.toString();
-    _routes.push(angular
-      .module("page." + name, [])
-      .config([
-        "$locationProvider",
-        "$routeProvider",
-        function ($locationProvider, $routeProvider) {
-          //daftarkan route
-          $routeProvider.when(objRoute[0], obj);
-          $routeProvider.otherwise("/404");
-          $locationProvider.html5Mode(true);
-        },
-      ])
-      .controller(obj.controller, obj._controller).name)
-    i++;
-  })
-  return _routes;
 }
 export default $routeFunction;

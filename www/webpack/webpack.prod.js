@@ -92,7 +92,11 @@ module.exports = (env, argv) => {
         filename: context + ".min.css",
       }),
       new HtmlWebpackPlugin({
-        title: CONFIG.TITLE + ` (${context})`,
+        minify: true,
+        base: {
+          href: '/',
+        },
+        favicon: '../assets/favicon.ico',
         filename: path.join(__dirname, CONFIG.BUILD_DIR + `/index.${context}.min.htm`),
         template: `../${context}/index.html`,
         // inject: "body",

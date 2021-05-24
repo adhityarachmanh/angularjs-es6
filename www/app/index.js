@@ -1,6 +1,11 @@
-export default {
-  name: "IndexController",
-  controller: [
+import {
+  Component
+} from "../shr/module-builder";
+
+export default Component({
+    name: "index"
+  },
+  [
     "$scope",
     "$rootScope",
     "$route",
@@ -76,4 +81,4 @@ export default {
       });
     },
   ]
-};
+);

@@ -1,0 +1,6 @@
+<div class="d-flex align-items-center justify-content-center full-screen ">
+    <div class="container text-center">
+        <h1>ExampleComponent</h1>
+        <h3>{{controller}}</h3>
+    </div>
+</div>

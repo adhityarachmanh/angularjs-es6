@@ -4,10 +4,11 @@ cre : arh
 ver : 0
 */
 const _ = require("lodash");
+const CONFIG = require('./webpack.config');
 const sharedConfigs = (argv) => {
   return {
     context: __dirname,
-    entry: ["@babel/polyfill", `../${argv.project}/app.js`],
+    entry: ["@babel/polyfill", `../${argv.project}/${CONFIG.FILE_MODULE}`],
     module: {
       rules: [{
           test: /\.js$/,

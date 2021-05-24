@@ -1,44 +1,46 @@
 import "angular";
-import "angular-route";
+import ngRoute from "angular-route";
 import "bootstrap";
 // support css
-// import "../assets/css/style.css"
+import "../assets/css/style.css"
 // support scss/sass
 import "../assets/scss/app.scss"
 import 'sweetalert2/src/sweetalert2.scss'
 
-import IndexController from "./index";
-import ROUTES_MODULE from "./route";
-import TEMPLATES_MODULE from "./templates";
-import GLOBAL_MODULE from "../shr/global";
-import API_MODULE from "../shr/api";
-import config from "./config";
+import IndexComponent from "./index";
+import routes from "./routes";
+import Global from "../shr/global";
+import SvcRestAPI from "../shr/api";
+import Config from "./config";
+import {
+    NgModule
+} from "../shr/module-builder";
+import {
+    Template1Directive,
+    Template2Directive,
+    Template3Directive
+} from "./templates/templates.component";
+import homeComponent from "./views/home/home.component";
+import testComponent from "./views/test/test.component";
 
-//merge semua module
-let MODULES = ["ngRoute", GLOBAL_MODULE, API_MODULE];
-MODULES = MODULES.concat(ROUTES_MODULE);
-MODULES = MODULES.concat(TEMPLATES_MODULE);
-
-export const app = angular.module("app", MODULES),
-    CONST_NULL = null,
-    CONST_TRUE = true,
-    angularForEach = angular.forEach,
-    angularIsArray = angular.isArray,
-    angularIsNumber = angular.isNumber,
-    angularIsDefined = angular.isDefined,
-    angularIsUndefined = angular.isUndefined,
-    angularElement = angular.element,
-    angularIsString = angular.isString,
-    angularIsFunction = angular.isFunction,
-    angularCopy = angular.copy,
-    angularEquals = angular.equals,
-    appConstant = app.constant,
-    appConfig = app.config,
-    appFactory = app.factory,
-    appController = app.controller,
-    appDirective = app.directive,
-    appRegister = CONST_NULL,
-    CONST_FALSE = !CONST_TRUE;
-
-appConstant("C", config)
-appController(IndexController.name, IndexController.controller)
+NgModule("app",{
+    components: [
+        homeComponent,
+        testComponent
+    ],
+    services: [],
+    constants: [],
+    directives: [
+        Template1Directive,
+        Template2Directive,
+        Template3Directive
+    ],
+    imports: [
+        ngRoute,
+        Config,
+        Global,
+        SvcRestAPI,
+    ],
+    routes: routes,
+    index: IndexComponent
+})
