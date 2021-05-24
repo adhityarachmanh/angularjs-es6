@@ -7,8 +7,6 @@ const {
   HotModuleReplacementPlugin
 } = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-const CONFIG = require("./webpack.config");
 const addBaseConfig = require("./webpack.base");
 
 
@@ -102,7 +100,7 @@ module.exports = (env, argv) => {
           href: '/',
         },
         filename: "index.html",
-        template: `../${context}/index.html`,
+        template: `../index.${context}.htm`,
       }),
     ],
     devServer: {

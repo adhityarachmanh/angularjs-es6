@@ -5,7 +5,7 @@ import {
 export default Constant("C", {
   _R: "",
   v: "?v=1",
-  app: 'app/',
+  app: 'adm/',
   res: 'res/',
   lOpt: [{
     i: 'en',
@@ -15,7 +15,7 @@ export default Constant("C", {
     d: 'Indonesia'
   }],
   lDef: 'en',
-  lDir: "app/l/",
+  lDir: "adm/l/",
   Copyright: {
     Creator: "Adhitya Rachman Hidayatullah",
     ProductId: "",

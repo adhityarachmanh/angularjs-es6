@@ -1,5 +1,11 @@
+/*
+mod : Module Builder
+cre : lwx
+upd : arh 
+ver : 0
+*/
+
 import { Factory } from "./module-builder";
-// import CONFIG from "../app-config";
 
 export default Factory("A", [
   "C",

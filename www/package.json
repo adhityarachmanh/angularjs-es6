@@ -1,14 +1,13 @@
 {
-  "name": "arh-angularjs",
+  "name": "angularjs-es6",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "app.ng": "bash ../scripts/angularjs.sh app",
+    "app.ng": "bash ../scripts/ng.sh app",
     "app.prod": "webpack --config webpack/webpack.prod.js --project=app",
     "app.dev": "webpack-dev-server --host=localhost --port=4000 --config  webpack/webpack.dev.js --project=app",
-
-    "adm.ng": "bash ../scripts/angularjs.sh adm",
+    "adm.ng": "bash ../scripts/ng.sh adm",
     "adm.prod": "webpack --config webpack/webpack.prod.js --project=adm",
     "adm.dev": "webpack-dev-server --host=localhost --port=4001 --config  webpack/webpack.dev.js --project=adm"
   },
@@ -29,7 +28,6 @@
     "bootstrap-loader": "^3.0.4",
     "bootstrap-sass": "^3.4.1",
     "browser-sync": "^2.26.10",
-    "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^3.6.0",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^2.0.0",

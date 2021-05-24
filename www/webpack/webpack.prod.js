@@ -98,7 +98,7 @@ module.exports = (env, argv) => {
         },
         favicon: '../assets/favicon.ico',
         filename: path.join(__dirname, CONFIG.BUILD_DIR + `/index.${context}.min.htm`),
-        template: `../${context}/index.html`,
+        template: `../index.${context}.htm`,
         // inject: "body",
       }),
     ],

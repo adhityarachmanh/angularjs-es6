@@ -1,3 +1,8 @@
+/*
+mod : Module Builder
+cre : arh 
+ver : 0
+*/
 const $routeFunction = (routes) => {
   return angular.module('routing', []).config([
     "$routeProvider", "$locationProvider", "C", ($routeProvider, $locationProvider, CONFIG) => {

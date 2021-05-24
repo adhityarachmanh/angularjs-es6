@@ -23,7 +23,7 @@ import {
 import homeComponent from "./views/home/home.component";
 import testComponent from "./views/test/test.component";
 
-NgModule("app",{
+NgModule("adm",{
     components: [
         homeComponent,
         testComponent
