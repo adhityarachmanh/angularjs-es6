@@ -14,6 +14,7 @@ const CONFIG = require("./webpack.config");
 
 module.exports = (env, argv) => {
   let context = argv.project;
+  CONFIG.BUILD_DIR =  `${CONFIG.BUILD_DIR}/app`
   return addBaseConfig(argv, {
     mode: "production",
     // devtool: "source-map",
@@ -97,7 +98,7 @@ module.exports = (env, argv) => {
           href: '/',
         },
         favicon: '../assets/favicon.ico',
-        filename: path.join(__dirname, CONFIG.BUILD_DIR + `/index.${context}.min.htm`),
+        filename: path.join(__dirname,`../index.${context}.min.htm`),
         template: `../index.${context}.htm`,
         // inject: "body",
       }),
